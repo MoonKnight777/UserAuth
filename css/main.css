@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head h1{
+    text-align: center;
+    text-transform: uppercase;
+    background: #09cff1;
+    color: white;
+}
+
+.entrybox{
+    background: #da9090;
+    padding: 1rem;
+
+}
+
+.inputbox{
+    display: block;
+    width: 40vw;
+    margin: 1rem auto;
+    padding: 7px;
+    border-radius: 7px;
+    border: none;
+    font-size: 3vw;
+}
+
+.inputbox:focus{
+    outline: none;
+}
+
+.loginbtn button{
+    display: block;
+    font-size: 3vw;
+    background: #bdf53b;
+    width: 10rem;
+    margin: 0 auto;
+    padding: 5px;
+    border:none;
+    border-radius: 5px;
+}
