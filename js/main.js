@@ -64,15 +64,15 @@ function userentered() {
             let container = document.querySelector(".container");
             container.style.display = "none";
             info.style.display = "block";
-            infoname.innerHTML = data[i].name
-            infousername.innerHTML = data[i].username
-            infoemail.innerHTML = data[i].email
-            infostreet.innerHTML = data[i].address.street
-            infosuite.innerHTML = data[i].address.suite
-            infocity.innerHTML = data[i].address.city
-            infopincode.innerHTML = data[i].address.zipcode
-            infophone.innerHTML = data[i].phone
-            infoweb.innerHTML = data[i].website
+            infoname.innerHTML = `Name : ${data[i].name}`
+            infousername.innerHTML =`Username : ${data[i].username}`
+            infoemail.innerHTML = `E-mail : ${data[i].email}`
+            infostreet.innerHTML = `Street : ${data[i].address.street}`
+            infosuite.innerHTML = `Suite : ${data[i].address.suite}`
+            infocity.innerHTML = `City : ${data[i].address.city}`
+            infopincode.innerHTML = `Zipcode : ${data[i].address.zipcode}`
+            infophone.innerHTML = `Phone : ${data[i].phone}`
+            infoweb.innerHTML =  `Website : ${data[i].website}`
 
             return console.log("userdatafn")
         })
