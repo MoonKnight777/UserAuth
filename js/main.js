@@ -1,15 +1,15 @@
-
 function logincheck() {
 
     fetchdata()
         .then((data) => {
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
-            for (i = 0; i < data.length; i++) {
+            for (let i = 0; i < data.length; i++) {
                 if (username === data[i].email && password === data[i].name.replace(" ", '')) {
                     console.log("logged in")
                     let head = document.querySelector(".sts");
                     head.innerHTML = "Unlocked";
+                    document.cookie = `slot = ${i}`
                     userentered();
                     break;
                 }
@@ -34,6 +34,7 @@ function userentered() {
     fetchdata()
         .then((data) => {
             // let info = document.querySelector(".info");
+            window.location.href = "/UserAuth/user.html"
             let infoname = document.querySelector(".info_name");
             let infousername = document.querySelector(".info_username");
             let infoemail = document.querySelector(".info_email");
@@ -45,14 +46,13 @@ function userentered() {
             let infoweb = document.querySelector(".info_web");
             // let container = document.querySelector(".container");
             infoname.innerHTML = `Name : ${data[i].name}`
-            infousername.innerHTML =`Username : ${data[i].username}`
+            infousername.innerHTML = `Username : ${data[i].username}`
             infoemail.innerHTML = `E-mail : ${data[i].email}`
             infostreet.innerHTML = `Street : ${data[i].address.street}`
             infosuite.innerHTML = `Suite : ${data[i].address.suite}`
             infocity.innerHTML = `City : ${data[i].address.city}`
             infopincode.innerHTML = `Zipcode : ${data[i].address.zipcode}`
             infophone.innerHTML = `Phone : ${data[i].phone}`
-            infoweb.innerHTML =  `Website : ${data[i].website}`
-            window.location.href = "/UserAuth/user.html"
+            infoweb.innerHTML = `Website : ${data[i].website}`
         })
 }
