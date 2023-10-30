@@ -1,22 +1,4 @@
 
-
-// function returnvalue() {
-
-//     fetch('./js/info.json')
-//         .then((info) => {
-//             return info.json();
-//         })
-//         .then((data) => {
-
-
-//             if (username === data.username && password === data.password) {
-//                 console.log("logged in")
-//                 let head = document.querySelector(".sts");
-//                 head.innerHTML = "Unlocked";
-//             }
-//         })
-// }
-
 function logincheck() {
 
     fetchdata()
@@ -51,7 +33,7 @@ function userentered() {
 
     fetchdata()
         .then((data) => {
-            let info = document.querySelector(".info");
+            // let info = document.querySelector(".info");
             let infoname = document.querySelector(".info_name");
             let infousername = document.querySelector(".info_username");
             let infoemail = document.querySelector(".info_email");
@@ -61,9 +43,7 @@ function userentered() {
             let infopincode = document.querySelector(".address_pincode");
             let infophone = document.querySelector(".info_phone");
             let infoweb = document.querySelector(".info_web");
-            let container = document.querySelector(".container");
-            container.style.display = "none";
-            info.style.display = "block";
+            // let container = document.querySelector(".container");
             infoname.innerHTML = `Name : ${data[i].name}`
             infousername.innerHTML =`Username : ${data[i].username}`
             infoemail.innerHTML = `E-mail : ${data[i].email}`
@@ -73,7 +53,6 @@ function userentered() {
             infopincode.innerHTML = `Zipcode : ${data[i].address.zipcode}`
             infophone.innerHTML = `Phone : ${data[i].phone}`
             infoweb.innerHTML =  `Website : ${data[i].website}`
-
-            return console.log("userdatafn")
+            window.location.href = "/UserAuth/user.html"
         })
 }

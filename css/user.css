@@ -1,0 +1,14 @@
+.info {
+    /* display: none; */
+    padding: 1rem;
+    background: rgb(201, 126, 126);
+}
+
+.det {
+    margin: 10px;
+    background: #012533;
+    color: #fff;
+    font-family: 'Poppins';
+    font-weight: 500;
+    padding: 0.5rem;
+}
