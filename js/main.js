@@ -1,3 +1,25 @@
+async function fetchdata() {
+
+    const fetchedinfo = await fetch('https://jsonplaceholder.typicode.com/users');
+    if (!fetchedinfo.ok) {
+        console.error('Failed to fetch data');
+    }
+    const data = await fetchedinfo.json();
+    return data;
+
+}
+
+fetchdata()
+    .then((data) => {
+        console.log("done")
+        document.cookie = `slot=${data.length+10}` ;
+        console.log(document.cookie)
+        console.log("done")
+    })
+    .catch((error) => {
+        console.error("Error fetching data:", error);
+    });
+
 function logincheck() {
 
     fetchdata()
@@ -10,6 +32,7 @@ function logincheck() {
                     let head = document.querySelector(".sts");
                     head.innerHTML = "Unlocked";
                     document.cookie = `slot = ${i}`
+                    console.log(document.cookie)
                     userentered();
                     break;
                 }
@@ -21,38 +44,11 @@ function logincheck() {
         })
 }
 
-async function fetchdata() {
-
-    const fetchedinfo = await fetch('https://jsonplaceholder.typicode.com/users');
-    const data = await fetchedinfo.json();
-    return data;
-
-}
-
 function userentered() {
 
     fetchdata()
         .then((data) => {
-            // let info = document.querySelector(".info");
-            window.location.href = "/UserAuth/user.html"
-            let infoname = document.querySelector(".info_name");
-            let infousername = document.querySelector(".info_username");
-            let infoemail = document.querySelector(".info_email");
-            let infostreet = document.querySelector(".address_street");
-            let infosuite = document.querySelector(".address_suite");
-            let infocity = document.querySelector(".address_city");
-            let infopincode = document.querySelector(".address_pincode");
-            let infophone = document.querySelector(".info_phone");
-            let infoweb = document.querySelector(".info_web");
-            // let container = document.querySelector(".container");
-            infoname.innerHTML = `Name : ${data[i].name}`
-            infousername.innerHTML = `Username : ${data[i].username}`
-            infoemail.innerHTML = `E-mail : ${data[i].email}`
-            infostreet.innerHTML = `Street : ${data[i].address.street}`
-            infosuite.innerHTML = `Suite : ${data[i].address.suite}`
-            infocity.innerHTML = `City : ${data[i].address.city}`
-            infopincode.innerHTML = `Zipcode : ${data[i].address.zipcode}`
-            infophone.innerHTML = `Phone : ${data[i].phone}`
-            infoweb.innerHTML = `Website : ${data[i].website}`
+            window.location.href = "/UserAuth/user.html";
+            // window.open("/UserAuth/user.html","_blank")
         })
 }
